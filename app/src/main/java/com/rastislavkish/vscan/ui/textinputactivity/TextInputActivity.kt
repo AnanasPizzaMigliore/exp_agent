@@ -34,6 +34,7 @@ import android.view.inputmethod.InputMethodManager
 import android.view.KeyEvent
 
 import com.rastislavkish.vscan.R
+import com.rastislavkish.vscan.ui.fitContentInsideSystemBars
 
 class TextInputActivity : AppCompatActivity() {
 
@@ -46,6 +47,7 @@ class TextInputActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_text_input)
+        fitContentInsideSystemBars()
 
         input=try {
             TextInputActivityInput.fromIntent(intent, "TextInputActivity")

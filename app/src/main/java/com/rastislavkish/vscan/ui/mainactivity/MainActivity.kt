@@ -44,6 +44,7 @@ import kotlinx.serialization.json.Json
 import org.greenrobot.eventbus.EventBus
 
 import com.rastislavkish.vscan.R
+import com.rastislavkish.vscan.ui.fitContentInsideSystemBars
 
 import com.rastislavkish.vscan.core.PermissionRequester
 import com.rastislavkish.vscan.core.Settings
@@ -61,25 +62,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        fitContentInsideSystemBars()
 
         val permissionRequester=PermissionRequester(this)
         if (!permissionRequester.permissionsGranted) {
             permissionRequester.requestPermissions(this)
             }
 
-        when {
-            intent?.action==Intent.ACTION_SEND -> {
-                if (intent?.type?.startsWith("image")==true) {
-                    handleSendImage(intent!!)
-                    }
-                }
-            }
-
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-        val navController = navHostFragment.navController
-        val bottomNavigationView: BottomNavigationView=findViewById(R.id.bottomNavigationView)
-
-        NavigationUI.setupWithNavController(bottomNavigationView, navController)
+        // The nav graph has a single destination, so there is nothing to set up
+        // a navigation bar against. NavHostFragment shows it on its own.
         }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {

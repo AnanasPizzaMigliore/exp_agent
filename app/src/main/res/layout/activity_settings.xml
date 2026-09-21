@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+The screen does not fit on a phone, so the content scrolls. Without this the
+last entries are simply unreachable - including by TalkBack, which cannot
+scroll a LinearLayout that does not know it is too tall.
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.settingsactivity.SettingsActivity">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <Switch
         android:id="@+id/flashlightSwitch"
         android:text="Use flashlight by default"
@@ -156,4 +164,100 @@
         android:onClick="onModelProviderMappingsLabelClick"
         />
 
+    <TextView
+        android:text="Expiry inspection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <Switch
+        android:id="@+id/speakGuidanceSwitch"
+        android:text="Speak inspection instructions aloud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <Switch
+        android:id="@+id/storeInspectionImagesSwitch"
+        android:text="Keep inspection photographs in the research log"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <Switch
+        android:id="@+id/retrievalMemorySwitch"
+        android:text="Plan the search using where similar packages print their dates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <Switch
+        android:id="@+id/retrievalNameMatchingSwitch"
+        android:text="Also match brand names printed on the package"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <Switch
+        android:id="@+id/ablationArmsSwitch"
+        android:text="Record what other capture policies would have done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <Switch
+        android:id="@+id/instructionGroundingSwitch"
+        android:text="Name the face in movement instructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:labelFor="@+id/productLabelSelector"
+        android:text="Study package in hand:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <Spinner
+        android:id="@+id/productLabelSelector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:text="Capture ablation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <Switch
+        android:id="@+id/autoCaptureSwitch"
+        android:text="Take photographs automatically when the view settles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:labelFor="@+id/gateConditionSelector"
+        android:text="Capture controller:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <Spinner
+        android:id="@+id/gateConditionSelector"
+        android:contentDescription="Capture controller driving the camera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:labelFor="@+id/blockLabelSelector"
+        android:text="Scripted behaviour for this session:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <Spinner
+        android:id="@+id/blockLabelSelector"
+        android:contentDescription="Scripted behaviour recorded with the session"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
     </LinearLayout>
+    </ScrollView>

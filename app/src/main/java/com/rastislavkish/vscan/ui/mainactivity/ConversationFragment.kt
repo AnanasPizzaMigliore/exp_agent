@@ -82,8 +82,8 @@ class ConversationFragment: Fragment(), CoroutineScope {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         job=Job()
 
-        adapter=TabAdapter.getInstance(context!!)
-        conversationListAdapter=ConversationListAdapter(context!!)
+        adapter=TabAdapter.getInstance(requireContext())
+        conversationListAdapter=ConversationListAdapter(requireContext())
         conversationListAdapter.setActionListener(this::onConversationListItemAction)
 
         usageHeader=view.findViewById(R.id.usageHeader)
@@ -149,7 +149,7 @@ class ConversationFragment: Fragment(), CoroutineScope {
     private fun copyMessage(position: Int) {
         val message=conversationListAdapter.getMessage(position) ?: return
 
-        val clipboard=activity!!.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        val clipboard=requireActivity().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
         clipboard.setPrimaryClip(ClipData.newPlainText("VScan", message.text))
         toast("Copied")
         }
@@ -159,7 +159,7 @@ class ConversationFragment: Fragment(), CoroutineScope {
 
         val context=if (regenerateFrom) "edit-regenerate-from:$position" else "edit:$position"
         val intent=TextInputActivityInput("Edit message", message.text, context)
-        .toIntent(activity!!)
+        .toIntent(requireActivity())
         textInputActivityLauncher.launch(intent)
         }
     private fun onTextInputActivityResult(result: ActivityResult) {
@@ -260,7 +260,7 @@ class ConversationFragment: Fragment(), CoroutineScope {
         "Reasoning tokens: ${usage.reasoningTokens}\n"+
         "Total tokens: ${usage.totalTokens}"
 
-        AlertDialog.Builder(activity!!)
+        AlertDialog.Builder(requireActivity())
         .setTitle("Message stats")
         .setMessage(text)
         .setPositiveButton("OK", null)
@@ -288,7 +288,7 @@ class ConversationFragment: Fragment(), CoroutineScope {
         }
 
     fun toast(text: String) {
-        Toast.makeText(activity!!, text, Toast.LENGTH_LONG).show()
+        Toast.makeText(requireActivity(), text, Toast.LENGTH_LONG).show()
         }
     fun toastResponse(response: AssistantMessage) {
         if (!response.text.isEmpty())

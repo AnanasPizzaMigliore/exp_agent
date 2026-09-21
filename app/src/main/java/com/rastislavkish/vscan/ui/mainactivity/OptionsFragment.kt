@@ -100,7 +100,7 @@ class OptionsFragment: Fragment(), CoroutineScope {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         job=Job()
 
-        adapter=TabAdapter.getInstance(context!!)
+        adapter=TabAdapter.getInstance(requireContext())
 
         systemPromptLink=view.findViewById(R.id.systemPromptLink)
         systemPromptLink.setOnClickListener(this::onSystemPromptLinkClick)
@@ -111,7 +111,7 @@ class OptionsFragment: Fragment(), CoroutineScope {
         highResSwitch.setOnCheckedChangeListener(this::onHighResSwitchCheckedChange)
 
         flashlightModeSpinner=view.findViewById(R.id.flashlightModeSpinner)
-        val flashlightModeSpinnerAdapter=ArrayAdapter<String>(context!!, android.R.layout.simple_spinner_item, flashlightModeSpinnerOptions)
+        val flashlightModeSpinnerAdapter=ArrayAdapter<String>(requireContext(), android.R.layout.simple_spinner_item, flashlightModeSpinnerOptions)
         flashlightModeSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         flashlightModeSpinner.setAdapter(flashlightModeSpinnerAdapter)
         flashlightModeSpinner.setOnItemSelectedListener(object: AdapterView.OnItemSelectedListener {
@@ -122,7 +122,7 @@ class OptionsFragment: Fragment(), CoroutineScope {
             })
 
         cameraSpinner=view.findViewById(R.id.cameraSpinner)
-        val cameraSpinnerAdapter=ArrayAdapter<String>(context!!, android.R.layout.simple_spinner_item, cameraSpinnerOptions)
+        val cameraSpinnerAdapter=ArrayAdapter<String>(requireContext(), android.R.layout.simple_spinner_item, cameraSpinnerOptions)
         cameraSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         cameraSpinner.setAdapter(cameraSpinnerAdapter)
         cameraSpinner.setOnItemSelectedListener(object: AdapterView.OnItemSelectedListener {
@@ -140,7 +140,7 @@ class OptionsFragment: Fragment(), CoroutineScope {
         TextController(maxCompletionTokensInput).setTextChangeListener(this::onMaxCompletionTokensInputTextChange)
 
         reasoningEffortSpinner=view.findViewById(R.id.reasoningEffortSpinner)
-        val reasoningEffortSpinnerAdapter=ArrayAdapter<String>(context!!, android.R.layout.simple_spinner_item, reasoningEffortSpinnerOptions)
+        val reasoningEffortSpinnerAdapter=ArrayAdapter<String>(requireContext(), android.R.layout.simple_spinner_item, reasoningEffortSpinnerOptions)
         reasoningEffortSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         reasoningEffortSpinner.setAdapter(reasoningEffortSpinnerAdapter)
         reasoningEffortSpinner.setOnItemSelectedListener(object: AdapterView.OnItemSelectedListener {
@@ -301,13 +301,13 @@ class OptionsFragment: Fragment(), CoroutineScope {
     fun onUpdateButtonClick(v: View) {
         launch { adapter.mutex.withLock {
             val originalConfig=adapter.activeConfig
-            ConfigManager.getInstance(context!!).updateConfig(adapter.activeConfig)
+            ConfigManager.getInstance(requireContext()).updateConfig(adapter.activeConfig)
             toast("Updated config ${originalConfig.name}")
             }}
         }
     fun onCreateButtonClick(v: View) {
         launch { adapter.mutex.withLock {
-            val newConfig=ConfigManager.getInstance(context!!).addConfig(adapter.activeConfig)
+            val newConfig=ConfigManager.getInstance(requireContext()).addConfig(adapter.activeConfig)
             adapter.activeConfig=newConfig
             toast("created a new config called ${newConfig.name}")
             }}
@@ -315,18 +315,18 @@ class OptionsFragment: Fragment(), CoroutineScope {
     fun onDeleteButtonClick(v: View) {
         launch { adapter.mutex.withLock {
             val activeConfig=adapter.activeConfig
-            ConfigManager.getInstance(context!!).deleteConfig(activeConfig)
+            ConfigManager.getInstance(requireContext()).deleteConfig(activeConfig)
             toast("Config ${activeConfig.name} deleted")
             }}
         }
 
     fun onSettingsButtonClick(v: View) {
-        val intent=Intent(context!!, SettingsActivity::class.java)
+        val intent=Intent(requireContext(), SettingsActivity::class.java)
         startActivity(intent)
         }
 
     fun toast(text: String) {
-        Toast.makeText(activity!!, text, Toast.LENGTH_LONG).show()
+        Toast.makeText(requireActivity(), text, Toast.LENGTH_LONG).show()
         }
 
     fun getUIConfig(adapter: TabAdapter): Config {
@@ -459,7 +459,7 @@ class OptionsFragment: Fragment(), CoroutineScope {
 
     private fun startTextInputActivity(title: String, text: String, context: String) {
         val intent=TextInputActivityInput(title, text, context)
-        .toIntent(activity!!)
+        .toIntent(requireActivity())
         textInputActivityLauncher.launch(intent)
         }
     private fun onTextInputActivityResult(result: ActivityResult) {
@@ -488,7 +488,7 @@ class OptionsFragment: Fragment(), CoroutineScope {
         }
     private fun startModelSelectionActivity() {
         val intent=ModelSelectionActivityInput(DisplayedModels.READY_TO_USE)
-        .toIntent(activity!!)
+        .toIntent(requireActivity())
         modelSelectionActivityLauncher.launch(intent)
         }
     private fun onModelSelectionActivityResult(result: ActivityResult) {

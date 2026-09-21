@@ -31,6 +31,7 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 
 import com.rastislavkish.vscan.R
+import com.rastislavkish.vscan.ui.fitContentInsideSystemBars
 
 import com.rastislavkish.vscan.core.Provider
 import com.rastislavkish.vscan.core.ProvidersManager
@@ -71,6 +72,7 @@ class ProviderActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_provider)
+        fitContentInsideSystemBars()
 
         val input=try {
             ProviderActivityInput.fromIntent(intent, "ProviderActivity")

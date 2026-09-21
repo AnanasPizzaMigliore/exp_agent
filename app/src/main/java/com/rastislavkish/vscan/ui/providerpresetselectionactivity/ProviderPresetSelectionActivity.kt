@@ -27,6 +27,7 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 
 import com.rastislavkish.vscan.R
+import com.rastislavkish.vscan.ui.fitContentInsideSystemBars
 
 import kotlinx.serialization.*
 import kotlinx.serialization.json.Json
@@ -41,6 +42,7 @@ class ProviderPresetSelectionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_provider_preset_selection)
+        fitContentInsideSystemBars()
 
         providerParamsListAdapter=ProviderParamsListAdapter(this)
         providerParamsListAdapter.setItemClickListener(this::providerParamsClick)

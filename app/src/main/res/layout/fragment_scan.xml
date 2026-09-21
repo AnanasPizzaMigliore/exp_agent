@@ -29,33 +29,106 @@
         >
         <Button
             android:id="@+id/askButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="Ask"
             />
         <Button
             android:id="@+id/systemPromptButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="S"
+            android:contentDescription="System prompt"
             />
         <Button
             android:id="@+id/userPromptButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="U"
+            android:contentDescription="User prompt"
             />
         <Button
             android:id="@+id/saveButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="Save"
             />
         <Button
             android:id="@+id/resetConfigButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="Reset"
+            />
+        <Button
+            android:id="@+id/expiryButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Expiry"
+            android:contentDescription="Find expiry date"
+            />
+        </LinearLayout>
+
+    <!--
+    Live region: the phase changes without the user touching anything - a reply
+    arrives, a request fails - and a blind user has to hear that without going
+    looking for it. "polite" rather than "assertive" so it queues behind a
+    spoken instruction instead of cutting it off.
+    -->
+    <TextView
+        android:id="@+id/expiryStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:padding="8dp"
+        android:textSize="18sp"
+        android:accessibilityLiveRegion="polite"
+        app:layout_constraintTop_toBottomOf="@+id/upperBar"
+        />
+
+    <LinearLayout
+        android:id="@+id/expiryBar"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/expiryStatus"
+        >
+        <Button
+            android:id="@+id/repeatInstructionButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Repeat"
+            android:contentDescription="Repeat instruction"
+            />
+        <Button
+            android:id="@+id/pauseInspectionButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Pause"
+            />
+        <Button
+            android:id="@+id/newPackageButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="New"
+            android:contentDescription="Start with a different package"
+            />
+        <Button
+            android:id="@+id/stopInspectionButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Stop"
+            android:contentDescription="Stop inspection"
             />
         </LinearLayout>
 
@@ -66,7 +139,7 @@
         android:text="Scan"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/upperBar"
+        app:layout_constraintTop_toBottomOf="@+id/expiryBar"
         app:layout_constraintBottom_toTopOf="@+id/lowerBar"
         />
 

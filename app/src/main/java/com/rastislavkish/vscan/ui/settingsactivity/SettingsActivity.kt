@@ -25,12 +25,18 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 
 import android.widget.Button
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
 import android.view.View
 
 import com.rastislavkish.vscan.R
+import com.rastislavkish.vscan.ui.fitContentInsideSystemBars
+
+import com.rastislavkish.vscan.agent.AgentSettings
+import com.rastislavkish.vscan.agent.GateConditions
 
 import com.rastislavkish.vscan.core.ConfigManager
 import com.rastislavkish.vscan.core.Settings
@@ -43,6 +49,10 @@ import com.rastislavkish.vscan.ui.providersactivity.ProvidersActivity
 import com.rastislavkish.vscan.ui.modelprovidermappingsactivity.ModelProviderMappingsActivity
 
 class SettingsActivity : AppCompatActivity() {
+
+    /** How the empty block label reads in the list. */
+    private val NO_BLOCK="Not part of the ablation"
+
 
     private lateinit var configManager: ConfigManager
     private lateinit var settings: Settings
@@ -59,6 +69,18 @@ class SettingsActivity : AppCompatActivity() {
     private lateinit var volumeUpPressActionSelector: TextView
     private lateinit var volumeDownPressActionSelector: TextView
 
+    private lateinit var agentSettings: AgentSettings
+    private lateinit var speakGuidanceSwitch: Switch
+    private lateinit var storeInspectionImagesSwitch: Switch
+    private lateinit var retrievalMemorySwitch: Switch
+    private lateinit var ablationArmsSwitch: Switch
+    private lateinit var retrievalNameMatchingSwitch: Switch
+    private lateinit var instructionGroundingSwitch: Switch
+    private lateinit var autoCaptureSwitch: Switch
+    private lateinit var gateConditionSelector: Spinner
+    private lateinit var blockLabelSelector: Spinner
+    private lateinit var productLabelSelector: Spinner
+
     private var lastActivatedConfigSelector: View?=null
     private var lastActivatedActionSelector: View?=null
     private lateinit var configSelectionActivityLauncher: ActivityResultLauncher<Intent>
@@ -67,6 +89,7 @@ class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
+        fitContentInsideSystemBars()
 
         configManager=ConfigManager.getInstance(this)
         settings=Settings.getInstance(this)
@@ -83,6 +106,38 @@ class SettingsActivity : AppCompatActivity() {
         volumeUpPressActionSelector=findViewById(R.id.volumeUpPressActionSelector)
         volumeDownPressActionSelector=findViewById(R.id.volumeDownPressActionSelector)
 
+        agentSettings=AgentSettings.getInstance(this)
+        speakGuidanceSwitch=findViewById(R.id.speakGuidanceSwitch)
+        storeInspectionImagesSwitch=findViewById(R.id.storeInspectionImagesSwitch)
+        retrievalMemorySwitch=findViewById(R.id.retrievalMemorySwitch)
+        ablationArmsSwitch=findViewById(R.id.ablationArmsSwitch)
+        retrievalNameMatchingSwitch=findViewById(R.id.retrievalNameMatchingSwitch)
+        instructionGroundingSwitch=findViewById(R.id.instructionGroundingSwitch)
+        autoCaptureSwitch=findViewById(R.id.autoCaptureSwitch)
+
+        // The ablation conditions, so the study can be run from the phone
+        // alone. Spinners rather than free text: a mistyped condition would
+        // either refuse to start the session or, worse, label a run as an
+        // ablation it was not.
+        gateConditionSelector=findViewById(R.id.gateConditionSelector)
+        gateConditionSelector.adapter=ArrayAdapter(this,
+            android.R.layout.simple_spinner_dropdown_item,
+            GateConditions.names.toList())
+
+        // "" is ordinary use. It is shown as a readable phrase rather than an
+        // empty row so it can be chosen deliberately, because leaving a stale
+        // block label on is how three sessions came to be scored as something
+        // nobody had performed.
+        blockLabelSelector=findViewById(R.id.blockLabelSelector)
+        blockLabelSelector.adapter=ArrayAdapter(this,
+            android.R.layout.simple_spinner_dropdown_item,
+            GateConditions.blocks.map { if (it.isEmpty()) NO_BLOCK else it })
+
+        productLabelSelector=findViewById(R.id.productLabelSelector)
+        productLabelSelector.adapter=ArrayAdapter(this,
+            android.R.layout.simple_spinner_dropdown_item,
+            GateConditions.studyLabels.map { if (it.isEmpty()) NO_BLOCK else it })
+
         configSelectionActivityLauncher=registerForActivityResult(StartActivityForResult(), this::configSelectionActivityResult)
         actionSelectionActivityLauncher=registerForActivityResult(StartActivityForResult(), this::actionSelectionActivityResult)
         }
@@ -91,6 +146,21 @@ class SettingsActivity : AppCompatActivity() {
         flashlightSwitch.setChecked(settings.useFlashlight)
         soundsSwitch.setChecked(settings.useSounds)
         describeSavedImagesSwitch.setChecked(settings.describeSavedImages)
+        speakGuidanceSwitch.setChecked(agentSettings.speakGuidance)
+        storeInspectionImagesSwitch.setChecked(agentSettings.storeImages)
+        instructionGroundingSwitch.setChecked(agentSettings.instructionGrounding)
+        retrievalMemorySwitch.setChecked(agentSettings.retrievalMemory)
+        ablationArmsSwitch.setChecked(agentSettings.ablationArms)
+        retrievalNameMatchingSwitch.setChecked(agentSettings.retrievalNameMatching)
+        autoCaptureSwitch.setChecked(agentSettings.autoCapture)
+
+        val conditions=GateConditions.names.toList()
+        gateConditionSelector.setSelection(
+            conditions.indexOf(agentSettings.gateCondition).coerceAtLeast(0))
+        blockLabelSelector.setSelection(
+            GateConditions.blocks.indexOf(agentSettings.blockLabel).coerceAtLeast(0))
+        productLabelSelector.setSelection(
+            GateConditions.studyLabels.indexOf(agentSettings.productLabel).coerceAtLeast(0))
 
         refreshSelectors()
 
@@ -102,6 +172,21 @@ class SettingsActivity : AppCompatActivity() {
         settings.describeSavedImages=describeSavedImagesSwitch.isChecked()
 
         settings.save()
+
+        agentSettings.speakGuidance=speakGuidanceSwitch.isChecked()
+        agentSettings.storeImages=storeInspectionImagesSwitch.isChecked()
+        agentSettings.instructionGrounding=instructionGroundingSwitch.isChecked()
+        agentSettings.retrievalMemory=retrievalMemorySwitch.isChecked()
+        agentSettings.ablationArms=ablationArmsSwitch.isChecked()
+        agentSettings.retrievalNameMatching=retrievalNameMatchingSwitch.isChecked()
+        agentSettings.autoCapture=autoCaptureSwitch.isChecked()
+        agentSettings.gateCondition=GateConditions.names.toList()
+        .getOrElse(gateConditionSelector.selectedItemPosition) { GateConditions.FULL }
+        agentSettings.blockLabel=GateConditions.blocks
+        .getOrElse(blockLabelSelector.selectedItemPosition) { "" }
+        agentSettings.productLabel=GateConditions.studyLabels
+        .getOrElse(productLabelSelector.selectedItemPosition) { "" }
+        agentSettings.save()
 
         super.onPause()
         }

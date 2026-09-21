@@ -30,6 +30,7 @@ import android.widget.Toast
 import android.view.View
 
 import com.rastislavkish.vscan.R
+import com.rastislavkish.vscan.ui.fitContentInsideSystemBars
 
 import com.rastislavkish.vscan.ui.modelselectionactivity.ModelSelectionActivity
 import com.rastislavkish.vscan.ui.modelselectionactivity.DisplayedModels
@@ -53,6 +54,7 @@ class ModelIdActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_model_id)
+        fitContentInsideSystemBars()
 
         val input=try {
             ModelIdActivityInput.fromIntent(intent, "ModelIdActivity")

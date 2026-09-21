@@ -65,10 +65,10 @@ class ConfigListFragment: Fragment(), CoroutineScope {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         job=Job()
-        settings=Settings.getInstance(context!!)
-        tabAdapter=TabAdapter.getInstance(context!!)
-        configSorter=ConfigSorter.getInstance(context!!)
-        configListAdapter=ConfigListAdapter(context!!, configSorter)
+        settings=Settings.getInstance(requireContext())
+        tabAdapter=TabAdapter.getInstance(requireContext())
+        configSorter=ConfigSorter.getInstance(requireContext())
+        configListAdapter=ConfigListAdapter(requireContext(), configSorter)
         configListAdapter.setItemClickListener(this::configClick)
         configListAdapter.setItemLongClickListener(this::configLongClick)
         val configList: RecyclerView=view.findViewById(R.id.configList)
@@ -88,7 +88,7 @@ class ConfigListFragment: Fragment(), CoroutineScope {
             tabAdapter.activeConfig=config
             configSorter.markSelection(config.id)
 
-            val navHostFragment = activity!!.supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+            val navHostFragment = requireActivity().supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
             val navController = navHostFragment.navController
             navController.navigateUp()
             }}
@@ -109,7 +109,7 @@ class ConfigListFragment: Fragment(), CoroutineScope {
         }
 
     fun toast(text: String) {
-        Toast.makeText(activity!!, text, Toast.LENGTH_LONG).show()
+        Toast.makeText(requireActivity(), text, Toast.LENGTH_LONG).show()
         }
     fun toastResponse(response: AssistantMessage) {
         if (!response.text.isEmpty())

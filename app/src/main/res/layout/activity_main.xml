@@ -14,7 +14,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintBottom_toBottomOf="parent"
         >
         <fragment
             android:id="@+id/nav_host_fragment"
@@ -25,11 +25,19 @@
             app:navGraph="@navigation/nav_graph" />
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
+    <!--
+    Hidden, not deleted. With one destination this would be a tab strip with a
+    single tab, and for a TalkBack user four extra swipes between them and the
+    shutter. It stays declared because the unreachable fragments still resolve
+    R.id.bottomNavigationView at compile time, and because restoring the full
+    app should be a matter of this attribute plus the nav graph.
+    -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        android:visibility="gone"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

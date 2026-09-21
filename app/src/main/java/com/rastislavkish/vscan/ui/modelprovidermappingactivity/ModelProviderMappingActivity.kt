@@ -31,6 +31,7 @@ import android.widget.Toast
 import android.view.View
 
 import com.rastislavkish.vscan.R
+import com.rastislavkish.vscan.ui.fitContentInsideSystemBars
 
 import com.rastislavkish.vscan.core.Provider
 import com.rastislavkish.vscan.core.ProvidersManager
@@ -65,6 +66,7 @@ class ModelProviderMappingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_model_provider_mapping)
+        fitContentInsideSystemBars()
 
         val input=try {
             ModelProviderMappingActivityInput.fromIntent(intent, "ModelProviderMappingActivity")

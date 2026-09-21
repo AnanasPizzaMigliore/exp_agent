@@ -25,6 +25,7 @@ import android.widget.TextView
 import android.view.View
 
 import com.rastislavkish.vscan.R
+import com.rastislavkish.vscan.ui.fitContentInsideSystemBars
 
 class ConfirmationActivity : AppCompatActivity() {
 
@@ -33,6 +34,7 @@ class ConfirmationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_confirmation)
+        fitContentInsideSystemBars()
 
         input=ConfirmationActivityInput.fromIntent(intent, "ConfirmationActivity")
 

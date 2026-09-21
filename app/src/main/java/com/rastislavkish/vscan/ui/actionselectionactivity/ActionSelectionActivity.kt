@@ -33,6 +33,7 @@ import kotlinx.serialization.*
 import kotlinx.serialization.json.Json
 
 import com.rastislavkish.vscan.R
+import com.rastislavkish.vscan.ui.fitContentInsideSystemBars
 
 import com.rastislavkish.vscan.core.ConfigManager
 import com.rastislavkish.vscan.core.Action
@@ -64,6 +65,7 @@ class ActionSelectionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_action_selection)
+        fitContentInsideSystemBars()
 
         configManager=ConfigManager.getInstance(this)
 

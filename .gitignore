@@ -13,3 +13,15 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Expiry inspection backend
+__pycache__/
+.pytest_cache/
+/backend/runs/
+/backend/.env
+
+# Downloaded by tools/build_visual_index.py; the copy under app/src/main/assets ships
+/tools/models/
+
+# Model replies from tools/perception_accuracy.py; they contain the dates read
+/tools/runs/
