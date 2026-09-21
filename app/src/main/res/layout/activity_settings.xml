@@ -209,6 +209,18 @@ scroll a LinearLayout that does not know it is too tall.
         />
 
     <TextView
+        android:labelFor="@+id/participantSelector"
+        android:text="Participant:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <Spinner
+        android:id="@+id/participantSelector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
         android:labelFor="@+id/productLabelSelector"
         android:text="Study package in hand:"
         android:layout_width="wrap_content"
@@ -216,6 +228,21 @@ scroll a LinearLayout that does not know it is too tall.
         />
     <Spinner
         android:id="@+id/productLabelSelector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <!--
+    What has actually been recorded. Read between participants when there is no
+    computer in the room, because nothing else on the phone can say: the log
+    directory is not reachable from the Files app on Android 11 and up, and a
+    write that fails is swallowed so that it cannot take down an inspection.
+    -->
+    <TextView
+        android:id="@+id/logStatusLabel"
+        android:text="Log: reading"
+        android:focusable="true"
+        android:layout_marginTop="8dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         />

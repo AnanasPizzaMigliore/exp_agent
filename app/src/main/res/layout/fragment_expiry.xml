@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+The whole app, on one screen.
+
+Laid out for a user who cannot see it and has one free hand: the shutter is a
+single target filling most of the display, so it can be hit without aiming, and
+everything else is a row of equal-width buttons along the bottom edge where a
+thumb lands. Nothing here is smaller than a fingertip.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.mainactivity.ExpiryFragment">
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <!--
+        A live region because the phase changes without the user touching
+        anything - a reply lands, a request fails. "polite" so it queues behind
+        a spoken instruction rather than cutting it off.
+        -->
+        <TextView
+            android:id="@+id/statusLabel"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:textSize="18sp"
+            android:text="Not inspecting"
+            android:accessibilityLiveRegion="polite"
+            />
+        <Button
+            android:id="@+id/settingsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            />
+        </LinearLayout>
+
+    <!--
+    Not a live region: the instruction is spoken, and announcing it here as well
+    would have TalkBack read every instruction twice.
+    -->
+    <TextView
+        android:id="@+id/instructionLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textSize="22sp"
+        android:text="Press the button to look for an expiry date."
+        app:layout_constraintTop_toBottomOf="@+id/topBar"
+        />
+
+    <!--
+    The camera, for everyone who is not the primary user: a sighted helper, and
+    the researcher watching what the agent was actually looking at. It sits
+    BEHIND the shutter and is marked no-important-for-accessibility, so TalkBack
+    never lands on it and the full-screen touch target is unchanged.
+    -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/instructionLabel"
+        app:layout_constraintBottom_toTopOf="@+id/controlBar"
+        />
+
+    <Button
+        android:id="@+id/actionButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textSize="24sp"
+        android:background="#66000000"
+        android:textColor="#FFFFFFFF"
+        android:text="Find expiry date"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/instructionLabel"
+        app:layout_constraintBottom_toTopOf="@+id/controlBar"
+        />
+
+    <LinearLayout
+        android:id="@+id/controlBar"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <Button
+            android:id="@+id/repeatButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Repeat"
+            android:contentDescription="Repeat instruction"
+            />
+        <Button
+            android:id="@+id/pauseButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Pause"
+            />
+        <Button
+            android:id="@+id/newPackageButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="New"
+            android:contentDescription="Start again with a different package"
+            />
+        <Button
+            android:id="@+id/stopButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Stop"
+            android:contentDescription="Stop inspection"
+            />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>

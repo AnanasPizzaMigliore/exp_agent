@@ -1,0 +1,957 @@
+{
+ "schema": "vscan-date-location-index-v1",
+ "built_at": "2026-09-15T16:03:15+00:00",
+ "source": {
+  "annotation_schema": "local-draft-v1",
+  "annotations_updated_at": "2026-09-14T13:08:12.573232+00:00",
+  "manifest_sha256": "7c29f9178ffd131039c538898e3db38ea14389131bb42865a5561dc2cda3a83d",
+  "annotations_sha256": "f94ee8afd465a927867a44119f13400e1d972494896b11c58c419e6aefed1d61"
+ },
+ "label_status": "75 of 75 product answers human-verified; 75 of 75 date locations human-verified",
+ "verified_only": true,
+ "excluded_products": [
+  "P01",
+  "P08",
+  "P101",
+  "P103",
+  "P107",
+  "P17",
+  "P21",
+  "P24",
+  "P25",
+  "P26",
+  "P30",
+  "P32",
+  "P33",
+  "P35",
+  "P36",
+  "P38",
+  "P42",
+  "P44",
+  "P47",
+  "P51",
+  "P53",
+  "P61",
+  "P70",
+  "P76",
+  "P79",
+  "P81",
+  "P84",
+  "P88",
+  "P90",
+  "P92",
+  "P93",
+  "P94",
+  "P95",
+  "P96",
+  "P99"
+ ],
+ "split": {
+  "file": "retrieval_split.csv",
+  "sha256": "e09672e07601f90172669c2571ae403ab0c7c342a763ff28ce29f9d269b4580a",
+  "evaluation_products": [
+   "P01",
+   "P08",
+   "P101",
+   "P103",
+   "P107",
+   "P17",
+   "P21",
+   "P24",
+   "P25",
+   "P26",
+   "P30",
+   "P32",
+   "P33",
+   "P35",
+   "P36",
+   "P38",
+   "P42",
+   "P44",
+   "P47",
+   "P51",
+   "P53",
+   "P61",
+   "P70",
+   "P76",
+   "P79",
+   "P81",
+   "P84",
+   "P88",
+   "P90",
+   "P92",
+   "P93",
+   "P94",
+   "P95",
+   "P96",
+   "P99"
+  ]
+ },
+ "geometry_classes": {
+  "carton": "box",
+  "multipack": "box",
+  "jar": "rigid_round",
+  "can": "rigid_round",
+  "bottle": "rigid_round",
+  "cup": "rigid_round",
+  "bag": "flexible",
+  "tray": "flexible"
+ },
+ "cases": [
+  {
+   "product_id": "P02",
+   "geometry": "carton",
+   "geometry_class": "box",
+   "location": "END",
+   "annotated_geometry": "carton",
+   "annotated_surface": "end_flap",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P03",
+   "geometry": "carton",
+   "geometry_class": "box",
+   "location": "SIDE",
+   "annotated_geometry": "carton",
+   "annotated_surface": "narrow_side",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P04",
+   "geometry": "carton",
+   "geometry_class": "box",
+   "location": "END",
+   "annotated_geometry": "carton",
+   "annotated_surface": "end_flap",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P05",
+   "geometry": "carton",
+   "geometry_class": "box",
+   "location": "END",
+   "annotated_geometry": "carton",
+   "annotated_surface": "end_flap",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P06",
+   "geometry": "carton",
+   "geometry_class": "box",
+   "location": "END",
+   "annotated_geometry": "carton",
+   "annotated_surface": "end_flap",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P07",
+   "geometry": "carton",
+   "geometry_class": "box",
+   "location": "BACK",
+   "annotated_geometry": "carton",
+   "annotated_surface": "back_label",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P09",
+   "geometry": "multipack",
+   "geometry_class": "box",
+   "location": "TOP",
+   "annotated_geometry": "multipack_cartons",
+   "annotated_surface": "top_labels",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P10",
+   "geometry": "carton",
+   "geometry_class": "box",
+   "location": "SIDE",
+   "annotated_geometry": "carton",
+   "annotated_surface": "narrow_side",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P100",
+   "geometry": "carton",
+   "geometry_class": "box",
+   "location": "END",
+   "annotated_geometry": "carton",
+   "annotated_surface": "end_flap",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P102",
+   "geometry": "carton",
+   "geometry_class": "box",
+   "location": "SIDE",
+   "annotated_geometry": "carton",
+   "annotated_surface": "narrow_side",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P104",
+   "geometry": "carton",
+   "geometry_class": "box",
+   "location": "SIDE",
+   "annotated_geometry": "carton",
+   "annotated_surface": "narrow_side",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P105",
+   "geometry": "bag",
+   "geometry_class": "flexible",
+   "location": "BACK",
+   "annotated_geometry": "pouch",
+   "annotated_surface": "back_label",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P106",
+   "geometry": "carton",
+   "geometry_class": "box",
+   "location": "SIDE",
+   "annotated_geometry": "carton",
+   "annotated_surface": "narrow_side",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P108",
+   "geometry": "bag",
+   "geometry_class": "flexible",
+   "location": "BACK",
+   "annotated_geometry": "pouch",
+   "annotated_surface": "back_label",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P109",
+   "geometry": "bag",
+   "geometry_class": "flexible",
+   "location": "BACK",
+   "annotated_geometry": "pouch",
+   "annotated_surface": "back_above_barcode",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P11",
+   "geometry": "carton",
+   "geometry_class": "box",
+   "location": "SIDE",
+   "annotated_geometry": "carton",
+   "annotated_surface": "narrow_side",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P110",
+   "geometry": "bag",
+   "geometry_class": "flexible",
+   "location": "BACK",
+   "annotated_geometry": "pouch",
+   "annotated_surface": "back_above_barcode",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P12",
+   "geometry": "carton",
+   "geometry_class": "box",
+   "location": "BASE",
+   "annotated_geometry": "carton",
+   "annotated_surface": "bottom_fold",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P13",
+   "geometry": "multipack",
+   "geometry_class": "box",
+   "location": "TOP",
+   "annotated_geometry": "multipack_cartons",
+   "annotated_surface": "top_labels",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P14",
+   "geometry": "carton",
+   "geometry_class": "box",
+   "location": "END",
+   "annotated_geometry": "carton",
+   "annotated_surface": "end_flap",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P15",
+   "geometry": "carton",
+   "geometry_class": "box",
+   "location": "BACK",
+   "annotated_geometry": "carton",
+   "annotated_surface": "back_label",
+   "name_tokens": [
+    "oreo"
+   ],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P16",
+   "geometry": "carton",
+   "geometry_class": "box",
+   "location": "END",
+   "annotated_geometry": "carton",
+   "annotated_surface": "end_flap",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P18",
+   "geometry": "cup",
+   "geometry_class": "rigid_round",
+   "location": "BASE",
+   "annotated_geometry": "tub",
+   "annotated_surface": "base",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P19",
+   "geometry": "multipack",
+   "geometry_class": "box",
+   "location": "TOP",
+   "annotated_geometry": "multipack_tubs",
+   "annotated_surface": "foil_lids",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P20",
+   "geometry": "cup",
+   "geometry_class": "rigid_round",
+   "location": "SIDE",
+   "annotated_geometry": "tub",
+   "annotated_surface": "upper_sidewall",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P22",
+   "geometry": "jar",
+   "geometry_class": "rigid_round",
+   "location": "TOP",
+   "annotated_geometry": "jar",
+   "annotated_surface": "lid",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P23",
+   "geometry": "jar",
+   "geometry_class": "rigid_round",
+   "location": "TOP",
+   "annotated_geometry": "jar",
+   "annotated_surface": "lid",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P27",
+   "geometry": "cup",
+   "geometry_class": "rigid_round",
+   "location": "BASE",
+   "annotated_geometry": "tub",
+   "annotated_surface": "base",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P28",
+   "geometry": "bag",
+   "geometry_class": "flexible",
+   "location": "BACK",
+   "annotated_geometry": "wrapped_block",
+   "annotated_surface": "back_label",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P29",
+   "geometry": "bag",
+   "geometry_class": "flexible",
+   "location": "BASE",
+   "annotated_geometry": "wrapped_round",
+   "annotated_surface": "base_label",
+   "name_tokens": [
+    "edam"
+   ],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P31",
+   "geometry": "bottle",
+   "geometry_class": "rigid_round",
+   "location": "TOP",
+   "annotated_geometry": "bottle",
+   "annotated_surface": "neck",
+   "name_tokens": [
+    "coca",
+    "cola"
+   ],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P34",
+   "geometry": "can",
+   "geometry_class": "rigid_round",
+   "location": "BASE",
+   "annotated_geometry": "can",
+   "annotated_surface": "base",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P37",
+   "geometry": "bottle",
+   "geometry_class": "rigid_round",
+   "location": "TOP",
+   "annotated_geometry": "bottle",
+   "annotated_surface": "cap",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P39",
+   "geometry": "can",
+   "geometry_class": "rigid_round",
+   "location": "BASE",
+   "annotated_geometry": "can",
+   "annotated_surface": "base",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P40",
+   "geometry": "can",
+   "geometry_class": "rigid_round",
+   "location": "BASE",
+   "annotated_geometry": "drink_can",
+   "annotated_surface": "base",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P41",
+   "geometry": "can",
+   "geometry_class": "rigid_round",
+   "location": "BASE",
+   "annotated_geometry": "drink_can",
+   "annotated_surface": "base",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P43",
+   "geometry": "bottle",
+   "geometry_class": "rigid_round",
+   "location": "TOP",
+   "annotated_geometry": "bottle",
+   "annotated_surface": "shoulder",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P45",
+   "geometry": "carton",
+   "geometry_class": "box",
+   "location": "BACK",
+   "annotated_geometry": "carton",
+   "annotated_surface": "back_label",
+   "name_tokens": [
+    "foie",
+    "gras"
+   ],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P46",
+   "geometry": "tray",
+   "geometry_class": "flexible",
+   "location": "BACK",
+   "annotated_geometry": "tray",
+   "annotated_surface": "back_label",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P48",
+   "geometry": "bag",
+   "geometry_class": "flexible",
+   "location": "BACK",
+   "annotated_geometry": "pouch",
+   "annotated_surface": "back_label",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P49",
+   "geometry": "cup",
+   "geometry_class": "rigid_round",
+   "location": "BASE",
+   "annotated_geometry": "tub",
+   "annotated_surface": "base_label",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P50",
+   "geometry": "bag",
+   "geometry_class": "flexible",
+   "location": "BACK",
+   "annotated_geometry": "pouch",
+   "annotated_surface": "back_label",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P52",
+   "geometry": "bag",
+   "geometry_class": "flexible",
+   "location": "BACK",
+   "annotated_geometry": "pouch",
+   "annotated_surface": "back_label",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P54",
+   "geometry": "carton",
+   "geometry_class": "box",
+   "location": "SIDE",
+   "annotated_geometry": "carton",
+   "annotated_surface": "narrow_side",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P55",
+   "geometry": "carton",
+   "geometry_class": "box",
+   "location": "SIDE",
+   "annotated_geometry": "carton",
+   "annotated_surface": "narrow_side",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P56",
+   "geometry": "tray",
+   "geometry_class": "flexible",
+   "location": "FRONT",
+   "annotated_geometry": "tray",
+   "annotated_surface": "front_label",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P57",
+   "geometry": "carton",
+   "geometry_class": "box",
+   "location": "END",
+   "annotated_geometry": "carton",
+   "annotated_surface": "end_flap",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P58",
+   "geometry": "carton",
+   "geometry_class": "box",
+   "location": "SIDE",
+   "annotated_geometry": "carton",
+   "annotated_surface": "narrow_side",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P59",
+   "geometry": "bag",
+   "geometry_class": "flexible",
+   "location": "BACK",
+   "annotated_geometry": "pouch",
+   "annotated_surface": "back_label",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P60",
+   "geometry": "carton",
+   "geometry_class": "box",
+   "location": "SIDE",
+   "annotated_geometry": "carton",
+   "annotated_surface": "upper_side",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P62",
+   "geometry": "jar",
+   "geometry_class": "rigid_round",
+   "location": "TOP",
+   "annotated_geometry": "jar",
+   "annotated_surface": "lid",
+   "name_tokens": [
+    "naturtierra"
+   ],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P63",
+   "geometry": "cup",
+   "geometry_class": "rigid_round",
+   "location": "BASE",
+   "annotated_geometry": "container",
+   "annotated_surface": "base",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P64",
+   "geometry": "bag",
+   "geometry_class": "flexible",
+   "location": "BACK",
+   "annotated_geometry": "pouch",
+   "annotated_surface": "lower_back_label",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P65",
+   "geometry": "can",
+   "geometry_class": "rigid_round",
+   "location": "BASE",
+   "annotated_geometry": "can",
+   "annotated_surface": "base",
+   "name_tokens": [
+    "litoral"
+   ],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P66",
+   "geometry": "carton",
+   "geometry_class": "box",
+   "location": "SIDE",
+   "annotated_geometry": "carton",
+   "annotated_surface": "narrow_side",
+   "name_tokens": [
+    "starlux"
+   ],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P67",
+   "geometry": "can",
+   "geometry_class": "rigid_round",
+   "location": "SIDE",
+   "annotated_geometry": "canister",
+   "annotated_surface": "side_near_barcode",
+   "name_tokens": [
+    "colacao"
+   ],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P68",
+   "geometry": "jar",
+   "geometry_class": "rigid_round",
+   "location": "BACK",
+   "annotated_geometry": "jar",
+   "annotated_surface": "back_label",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P69",
+   "geometry": "bag",
+   "geometry_class": "flexible",
+   "location": "BACK",
+   "annotated_geometry": "wrapped_block",
+   "annotated_surface": "back_label",
+   "name_tokens": [
+    "cheddar"
+   ],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P71",
+   "geometry": "cup",
+   "geometry_class": "rigid_round",
+   "location": "SIDE",
+   "annotated_geometry": "tub",
+   "annotated_surface": "upper_sidewall",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P72",
+   "geometry": "bottle",
+   "geometry_class": "rigid_round",
+   "location": "BACK",
+   "annotated_geometry": "squeeze_bottle",
+   "annotated_surface": "upper_back_label",
+   "name_tokens": [
+    "ketchup"
+   ],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P73",
+   "geometry": "cup",
+   "geometry_class": "rigid_round",
+   "location": "TOP",
+   "annotated_geometry": "tub",
+   "annotated_surface": "foil_lid",
+   "name_tokens": [
+    "kefir"
+   ],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P74",
+   "geometry": "bottle",
+   "geometry_class": "rigid_round",
+   "location": "BASE",
+   "annotated_geometry": "bottle",
+   "annotated_surface": "base",
+   "name_tokens": [
+    "kefir"
+   ],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P75",
+   "geometry": "can",
+   "geometry_class": "rigid_round",
+   "location": "BASE",
+   "annotated_geometry": "drink_can",
+   "annotated_surface": "base",
+   "name_tokens": [
+    "mahou"
+   ],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P77",
+   "geometry": "jar",
+   "geometry_class": "rigid_round",
+   "location": "SIDE",
+   "annotated_geometry": "jar",
+   "annotated_surface": "upper_side_label",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P78",
+   "geometry": "bottle",
+   "geometry_class": "rigid_round",
+   "location": "SIDE",
+   "annotated_geometry": "bottle",
+   "annotated_surface": "lower_side",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P80",
+   "geometry": "bag",
+   "geometry_class": "flexible",
+   "location": "BACK",
+   "annotated_geometry": "pouch",
+   "annotated_surface": "back_above_barcode",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P82",
+   "geometry": "jar",
+   "geometry_class": "rigid_round",
+   "location": "TOP",
+   "annotated_geometry": "jar",
+   "annotated_surface": "lid",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P83",
+   "geometry": "can",
+   "geometry_class": "rigid_round",
+   "location": "TOP",
+   "annotated_geometry": "can",
+   "annotated_surface": "lid",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P85",
+   "geometry": "bag",
+   "geometry_class": "flexible",
+   "location": "BACK",
+   "annotated_geometry": "pouch",
+   "annotated_surface": "back_label",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P86",
+   "geometry": "carton",
+   "geometry_class": "box",
+   "location": "SIDE",
+   "annotated_geometry": "carton",
+   "annotated_surface": "narrow_side",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P87",
+   "geometry": "tray",
+   "geometry_class": "flexible",
+   "location": "BACK",
+   "annotated_geometry": "tray",
+   "annotated_surface": "back_label",
+   "name_tokens": [
+    "dulano"
+   ],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P89",
+   "geometry": "bag",
+   "geometry_class": "flexible",
+   "location": "BACK",
+   "annotated_geometry": "pouch",
+   "annotated_surface": "back_label",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P91",
+   "geometry": "bag",
+   "geometry_class": "flexible",
+   "location": "BACK",
+   "annotated_geometry": "pouch",
+   "annotated_surface": "back_label",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P97",
+   "geometry": "bag",
+   "geometry_class": "flexible",
+   "location": "FRONT",
+   "annotated_geometry": "pouch",
+   "annotated_surface": "front_film",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  },
+  {
+   "product_id": "P98",
+   "geometry": "bag",
+   "geometry_class": "flexible",
+   "location": "BACK",
+   "annotated_geometry": "pouch",
+   "annotated_surface": "back_label",
+   "name_tokens": [],
+   "review_status": "HUMAN_VERIFIED",
+   "location_review_status": "HUMAN_VERIFIED"
+  }
+ ]
+}

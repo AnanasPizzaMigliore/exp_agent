@@ -35,7 +35,14 @@ import android.view.View
 import com.rastislavkish.vscan.R
 import com.rastislavkish.vscan.ui.fitContentInsideSystemBars
 
+import androidx.lifecycle.lifecycleScope
+
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+
 import com.rastislavkish.vscan.agent.AgentSettings
+import com.rastislavkish.vscan.agent.ExperimentLogger
 import com.rastislavkish.vscan.agent.GateConditions
 
 import com.rastislavkish.vscan.core.ConfigManager
@@ -80,6 +87,8 @@ class SettingsActivity : AppCompatActivity() {
     private lateinit var gateConditionSelector: Spinner
     private lateinit var blockLabelSelector: Spinner
     private lateinit var productLabelSelector: Spinner
+    private lateinit var participantSelector: Spinner
+    private lateinit var logStatusLabel: TextView
 
     private var lastActivatedConfigSelector: View?=null
     private var lastActivatedActionSelector: View?=null
@@ -133,10 +142,17 @@ class SettingsActivity : AppCompatActivity() {
             android.R.layout.simple_spinner_dropdown_item,
             GateConditions.blocks.map { if (it.isEmpty()) NO_BLOCK else it })
 
+        participantSelector=findViewById(R.id.participantSelector)
+        participantSelector.adapter=ArrayAdapter(this,
+            android.R.layout.simple_spinner_dropdown_item,
+            GateConditions.participants.map { if (it.isEmpty()) NO_BLOCK else it })
+
         productLabelSelector=findViewById(R.id.productLabelSelector)
         productLabelSelector.adapter=ArrayAdapter(this,
             android.R.layout.simple_spinner_dropdown_item,
             GateConditions.studyLabels.map { if (it.isEmpty()) NO_BLOCK else it })
+
+        logStatusLabel=findViewById(R.id.logStatusLabel)
 
         configSelectionActivityLauncher=registerForActivityResult(StartActivityForResult(), this::configSelectionActivityResult)
         actionSelectionActivityLauncher=registerForActivityResult(StartActivityForResult(), this::actionSelectionActivityResult)
@@ -161,10 +177,60 @@ class SettingsActivity : AppCompatActivity() {
             GateConditions.blocks.indexOf(agentSettings.blockLabel).coerceAtLeast(0))
         productLabelSelector.setSelection(
             GateConditions.studyLabels.indexOf(agentSettings.productLabel).coerceAtLeast(0))
+        participantSelector.setSelection(
+            GateConditions.participants.indexOf(agentSettings.participant).coerceAtLeast(0))
 
         refreshSelectors()
+        refreshLogStatus()
 
         super.onResume()
+        }
+
+    /**
+    * Say what has been recorded so far.
+    *
+    * The one thing on the phone that can confirm the study is being written
+    * down. Off the main thread because the file grows for the whole run, and
+    * back onto it to speak, so TalkBack reads a line that is already correct
+    * rather than one that changes underneath the announcement.
+    */
+    private fun refreshLogStatus() {
+        lifecycleScope.launch {
+            val status=withContext(Dispatchers.IO) {
+                ExperimentLogger.status(this@SettingsActivity)
+                }
+
+            logStatusLabel.text=describe(status)
+            }
+        }
+
+    private fun describe(status: ExperimentLogger.LogStatus): String {
+        if (status.empty)
+        return "Log: nothing recorded yet"
+
+        val sessions=if (status.sessions==1) "1 session" else "${status.sessions} sessions"
+        val images=if (status.images>0) ", ${status.images} frames" else ""
+
+        return "Log: $sessions, ${size(status.bytes)}$images, last written ${ago(status.lastWriteMs)}"
+        }
+
+    private fun size(bytes: Long): String =
+    if (bytes<1024L*1024L) "${maxOf(1L, bytes/1024L)} kB"
+    else "%.1f MB".format(bytes/1024.0/1024.0)
+
+    private fun ago(whenMs: Long): String {
+        if (whenMs<=0L)
+        return "never"
+
+        val minutes=(System.currentTimeMillis()-whenMs)/60_000L
+
+        return when {
+            minutes<1L -> "just now"
+            minutes==1L -> "1 minute ago"
+            minutes<60L -> "$minutes minutes ago"
+            minutes<120L -> "1 hour ago"
+            else -> "${minutes/60L} hours ago"
+            }
         }
     override fun onPause() {
         settings.useFlashlight=flashlightSwitch.isChecked()
@@ -186,6 +252,8 @@ class SettingsActivity : AppCompatActivity() {
         .getOrElse(blockLabelSelector.selectedItemPosition) { "" }
         agentSettings.productLabel=GateConditions.studyLabels
         .getOrElse(productLabelSelector.selectedItemPosition) { "" }
+        agentSettings.participant=GateConditions.participants
+        .getOrElse(participantSelector.selectedItemPosition) { "" }
         agentSettings.save()
 
         super.onPause()

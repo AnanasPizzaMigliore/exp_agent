@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Debug only. The research backend runs as plain http on a laptop on the same
+network, which the platform blocks by default from targetSdk 28 onwards. This
+overlay is why a debug build can reach http://192.168.x.x:8000 and a release
+build cannot - and it is deliberately not merged into release.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
+    </network-security-config>

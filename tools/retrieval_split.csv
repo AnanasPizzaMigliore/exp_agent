@@ -1,0 +1,111 @@
+product_id,legacy_product_id,product_name,geometry,group,split
+P01,P01,Kellogg cereal,carton,P01,evaluation
+P02,P02,Cereal,carton,P02,reference
+P03,P03,White chocolate,carton,P03,reference
+P04,P04,Cream sandwich biscuits,carton,P04,reference
+P05,P05,Wheat crackers,carton,P05,reference
+P06,P06,Mini toast,carton,P06,reference
+P07,P07,Snack bars,carton,P07,reference
+P08,P09,Omega 3 milk,carton,P08,evaluation
+P09,P10,Small drink cartons,multipack,P09,reference
+P10,P11,Carton package,carton,P10,reference
+P100,P109,Chocolate-filled cakes,carton,P100,reference
+P101,P110,Floristan potato omelette,tray,P101,evaluation
+P102,P111,Lemon tea,carton,P102,reference
+P103,P112,Fried tomato,carton,P103,evaluation
+P104,P113,Cocoa preparation,carton,P104,reference
+P105,P114,Organic crispbread,bag,P105,reference
+P106,P115,El Horno crispbread,carton,P106,reference
+P107,P116,Promotional biscuit carton,carton,P107,evaluation
+P108,P117,Sponge fingers,bag,P108,reference
+P109,P118,SOS rice,bag,P109,reference
+P11,P12,Tuna in olive oil,carton,P11,reference
+P110,P119,Organic peanuts,bag,P110,reference
+P12,P13,Drink carton,carton,P12,reference
+P13,P14,Tomato cartons,multipack,P13,reference
+P14,P15,Blue carton,carton,P14,reference
+P15,P16,Mini Oreo,carton,P15,reference
+P16,P18,Boxed product,carton,P16,reference
+P17,P19,Gimoka coffee capsules,carton,P17,evaluation
+P18,P21,Small dairy tub,cup,P18,reference
+P19,P22,Lemon yoghurt,multipack,P19,reference
+P20,P23,Dessert cup,cup,P20,reference
+P21,P24,Fruit yoghurt,cup,P21,evaluation
+P22,P25,Glass jar,jar,P22,reference
+P23,P26,Glass jar,jar,P22,reference
+P24,P27,Oil spray,can,P24,evaluation
+P25,P28,Container,cup,P25,evaluation
+P26,P29,Balsamic cream,bottle,P26,evaluation
+P27,P30,Plastic tub,cup,P27,reference
+P28,P31,Cheese block,bag,P28,reference
+P29,P32,Edam cheese,bag,P29,reference
+P30,P33,Facundo snack,bag,P30,evaluation
+P31,P34,Coca-Cola Zero Zero,bottle,P31,reference
+P32,P35,Snack can,can,P32,evaluation
+P33,P36,Red-base container,cup,P33,evaluation
+P34,P42,Coconut milk preparation,can,P34,reference
+P35,P43,Cooking cream,multipack,P35,evaluation
+P36,P44,Horchata,carton,P36,evaluation
+P37,P45,Drink bottle,bottle,P37,reference
+P38,P46,Red-base container,cup,P33,evaluation
+P39,P47,Metal can,can,P39,reference
+P40,P48,Canned drink,can,P40,reference
+P41,P49,Canned drink,can,P40,reference
+P42,P50,Snack pouch,bag,P42,evaluation
+P43,P51,Lemon drink,bottle,P43,reference
+P44,P52,Salmon pieces,tray,P44,evaluation
+P45,P53,Duck foie gras,carton,P45,reference
+P46,P54,Roast meat,tray,P46,reference
+P47,P55,Turkey ham,bag,P47,evaluation
+P48,P56,Cheese pouch,bag,P48,reference
+P49,P57,Cheese tub,cup,P49,reference
+P50,P58,Sweets,bag,P50,reference
+P51,P59,Chewing gum,cup,P51,evaluation
+P52,P60,Peanuts,bag,P52,reference
+P53,P61,Refrigerated product,carton,P53,evaluation
+P54,P62,White wine,carton,P54,reference
+P55,P63,Frozen seafood,carton,P55,reference
+P56,P64,Chicken tenderloin,tray,P56,reference
+P57,P65,Green carton,carton,P57,reference
+P58,P66,Cereal bars,carton,P58,reference
+P59,P67,Cocoa product,bag,P59,reference
+P60,P68,Rice,carton,P60,reference
+P61,P69,Food colouring,jar,P61,evaluation
+P62,P70,NaturTierra supplement,jar,P62,reference
+P63,P71,White container,cup,P63,reference
+P64,P72,Instant noodles,bag,P64,reference
+P65,P73,Litoral canned food,can,P65,reference
+P66,P74,Starlux stock,carton,P66,reference
+P67,P75,ColaCao,can,P67,reference
+P68,P76,Dried herbs,jar,P68,reference
+P69,P77,Cheddar cheese,bag,P69,reference
+P70,P78,Sauce,bottle,P70,evaluation
+P71,P79,Fried onion,cup,P71,reference
+P72,P80,Ketchup,bottle,P72,reference
+P73,P82,Kefir,cup,P73,reference
+P74,P83,Kefir drink,bottle,P73,reference
+P75,P84,Mahou 0.0,can,P75,reference
+P76,P85,Lays snack,bag,P76,evaluation
+P77,P86,Tuna in olive oil,jar,P11,reference
+P78,P87,Tomato drink,bottle,P78,reference
+P79,P88,Ice cream,carton,P79,evaluation
+P80,P89,Oil cakes,bag,P80,reference
+P81,P90,Fried tomato,jar,P103,evaluation
+P82,P91,Al Dente sauce,jar,P82,reference
+P83,P92,Tomato can,can,P83,reference
+P84,P93,Snack pouch,bag,P42,evaluation
+P85,P94,Pink pouch,bag,P85,reference
+P86,P95,Mashed potato flakes,carton,P86,reference
+P87,P96,Dulano pork sausages,tray,P87,reference
+P88,P97,Food pouch,bag,P88,evaluation
+P89,P98,Pink food pouch,bag,P89,reference
+P90,P99,Snack can,can,P32,evaluation
+P91,P100,Rice,bag,P60,reference
+P92,P101,Spaghetti,bag,P92,evaluation
+P93,P102,Crinklecut gherkins,jar,P93,evaluation
+P94,P103,Sauce,bottle,P70,evaluation
+P95,P104,Red-base container,cup,P33,evaluation
+P96,P105,Kellogg cereal,carton,P01,evaluation
+P97,P106,Crackers,bag,P97,reference
+P98,P107,White bakery pouch,bag,P98,reference
+P99,P108,Bimbo bakery product,bag,P99,evaluation

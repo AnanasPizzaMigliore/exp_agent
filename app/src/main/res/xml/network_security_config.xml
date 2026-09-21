@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Release builds talk to the guidance server over TLS or not at all.
+The debug overlay in src/debug relaxes this for a laptop on the same LAN.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false" />
+    </network-security-config>

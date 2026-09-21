@@ -25,3 +25,9 @@ __pycache__/
 
 # Model replies from tools/perception_accuracy.py; they contain the dates read
 /tools/runs/
+
+# Participant session logs pulled off the phone. Human-subjects research data:
+# it belongs wherever the study's consented data is kept, not in a source
+# repository where it is permanent and clonable by anyone with the URL.
+# Matches the existing rules for /backend/runs/ and /tools/runs/.
+/runs/
