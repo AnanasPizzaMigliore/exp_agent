@@ -12,7 +12,7 @@ bottom navigation bar rather than rewriting anything.
 
     <fragment
         android:id="@+id/expiryFragment"
-        android:name="com.rastislavkish.vscan.ui.mainactivity.ExpiryFragment"
+        android:name="com.expagent.ui.mainactivity.ExpiryFragment"
         android:label="Expiry date"
         tools:layout="@layout/fragment_expiry" />
     </navigation>

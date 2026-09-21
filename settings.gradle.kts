@@ -25,5 +25,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "VScan"
+rootProject.name = "exp_agent"
 include(":app")

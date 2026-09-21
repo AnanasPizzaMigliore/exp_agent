@@ -335,7 +335,7 @@ try again.
 
 ```
 python -m unittest tools/test_build_retrieval_index.py tools/test_evaluate_appearance_retrieval.py -v
-gradlew.bat :app:testDebugUnitTest --tests "com.rastislavkish.vscan.agent.DateLocationMemoryTest" --tests "com.rastislavkish.vscan.agent.InspectionGroundingTest"
+gradlew.bat :app:testDebugUnitTest --tests "com.expagent.agent.DateLocationMemoryTest" --tests "com.expagent.agent.InspectionGroundingTest"
 ```
 
 None of this has been run on a phone. Whether retrieval shortens searches is an

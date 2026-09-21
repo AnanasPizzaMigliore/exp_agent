@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Score a device run: the live capture controller, and the shadow arms beside it.
 
-    adb pull /sdcard/Android/data/com.rastislavkish.vscan/files/runs/events.jsonl
+    adb pull /sdcard/Android/data/com.expagent/files/runs/events.jsonl
     python tools/ablation_report.py events.jsonl --validate
     python tools/ablation_report.py events.jsonl --by-gate
     python tools/ablation_report.py events.jsonl --task

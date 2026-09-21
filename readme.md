@@ -1,20 +1,25 @@
-# VScan
+# exp agent
 
-<a href="https://f-droid.org/packages/com.rastislavkish.vscan">
-    <img src="https://f-droid.org/badge/get-it-on.png"
-    alt="Get it on F-Droid"
-    height="80">
-</a>
+An on-device agent that guides a blind user to the expiry date on a package
+they are holding, and the research harness built around it: a stability gate
+that decides when to photograph, tremor tolerance through the capture path, a
+fixed instruction vocabulary rendered on the phone, and session logging for
+participant studies.
 
-Perceiving space's geometry lets me *find* interesting things. Perceiving space's vibes lets me *discover* them.
+## Provenance and licence
 
-Travelling the world as a blind individual, I get to see many interesting and beautiful places. However, while I can navigate around quite well using human echolocation and my long cane, I still felt something was missing compared to my sighted times. I can use echolocation to perceive the geometry of the environment, but not so much its vibes, which often lie in subtle details. A silent, empty square feels completely different to a square full of people, music and life. In a similar fashion, a square in the middle of the day is something else to a night square, lit by colorful neons, full of flowers, statues, ancient or modern buildings.
+This is a research fork of [VScan](https://github.com/RastislavKish/VScan) by
+Rastislav Kish, and it is GPLv3 like the original. The camera, configuration,
+provider and conversation layers are his work; the expiry inspection agent under
+`app/src/main/java/com/expagent/agent/`, the `ExpiryFragment` UI and the
+`backend/` and `tools/` directories are this fork's.
 
-I can discover a monument using echolocation, but there's little I can do to tell what it represents, what color does it have, whether it's old, new, in what condition. I can walk on the street and notice a restaurant with a terrace, but I don't get to see its visuals, decoration or style on my radar. I can observe buildings on a square, but don't get to admire the magnificence of their architecture.
+Per-file copyright headers say which is which. Where this fork has modified one
+of his files, both notices are present and his comes first.
 
-Indeed, visuals are not the only medium for vibes, I can still get a lot from sounds, smells, activity. But it's a significant-one and I was thinking, whether I could make use of the large language models to fill this sensory gap. Before, my travel routine was to search for cool places on Google, and later find them in the environment. But with a good enough visual perception layer, perhaps it may be possible to do it the other way around. To visit a place, and discover interesting things on the walk. And get an even deeper connection with the space.
-
-Thus I designed VScan 0.2 to research this approach, as well as address some other camera-related needs I experience on my adventures.
+The original readme, including the author's own account of why VScan exists, is
+worth reading at the upstream repository. It is not reproduced here, because it
+is written in his voice about his project.
 
 ## How does it work
 
@@ -65,9 +70,14 @@ Also note the LLMs may be prone to general hallucinations and inaccuracy. This i
 
 ## Installation
 
-VScan is available on [F-Droid](https://f-droid.org/packages/com.rastislavkish.vscan), through [Obtainium](https://github.com/ImranR98/Obtainium) and also on [Google Play](https://play.google.com/store/apps/details?id=com.rastislavkish.vscan).
+This fork is not distributed through any store. Build it from source with the
+Android Gradle wrapper, and put a vision provider key in `local.properties` as
+`geminiApiKey` before building - the app has no key compiled in without one.
 
-I recommend using F-Droid for standard installation and Obtainium for installing directly from the repository. You can use the Google Play version as well, but this version is signed by a Play Store generated key, and as such I can't guarantee the package authenticity. Also note there are several other apps on the Play store with the same or a similar name, make sure to check the source before installing.
+    ./gradlew installDebug
+
+Upstream VScan is on F-Droid and Google Play; this is not that app and should
+not be installed over it.
 
 ## Initial setup
 

@@ -24,13 +24,13 @@ fun localProperty(name: String, fallback: String): String =
     localProperties.getProperty(name)?.takeIf { it.isNotBlank() } ?: fallback
 
 android {
-    namespace = "com.rastislavkish.vscan"
+    namespace = "com.expagent"
     compileSdk {
         version = release(37)
     }
 
     defaultConfig {
-        applicationId = "com.rastislavkish.vscan"
+        applicationId = "com.expagent"
         minSdk = 24
         targetSdk = 36
         versionCode = 24
